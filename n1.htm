@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="css/web.css" >
+ <title>新品</title>
+ <script type="text/javascript">
+ var select ;
+ function getselect(){
+
+  urlinfo=window.location.href; //获取当前页面的url
+
+  len=urlinfo.length;//获取url的长度
+   offset=urlinfo.indexOf("?"); //设置参数字符串开始的位置
+   newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+   newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+   newsid=newsids[1];//得到参数值
+  var intStr = parseInt(newsid);
+   //alert(""+intStr );
+    select = intStr;
+    dianji(select);
+ }
+ function add(index){
+  re(index);
+  switch (index) {
+   case 1:
+      document.getElementById("ni1").style.width='250px';
+    break;
+    case 2:
+      document.getElementById("ni2").style.width='250px';
+    break;
+   case 3:
+      document.getElementById("ni3").style.width='250px';
+     break;
+    case 4:
+       document.getElementById("ni4").style.width='250px';
+     break;
+   default:
+
+  }
+
+ }
+ function re(index){
+   document.getElementById("ni1").style.width='200px';
+   document.getElementById("ni2").style.width='200px';
+   document.getElementById("ni3").style.width='200px';
+   document.getElementById("ni4").style.width='200px';
+ }
+
+ function dianji(index){
+   re(index);
+
+  select  = index;
+  //alert("" + select);
+  switch (select) {
+   case 1:
+      document.getElementById("ni1").style.width='250px';
+      document.getElementById("n_bottom_h3").innerHTML="福满栗香玛奇朵";
+      document.getElementById("n_bottom_line").innerHTML="香甜考栗风味糖浆融合新鲜烹制牛奶和咖啡<br/>d顶部覆上丝绒般口感奶泡和纯正栗酱，为醇香咖啡带来更多新鲜层次。<br/>新的一年，一杯满满的福满栗香玛奇朵，福气满满！（过敏提示：本品含有坚果。）";
+
+    break;
+    case 2:
+      document.getElementById("ni2").style.width='250px';
+      document.getElementById("n_bottom_h3").innerHTML="如意桃花风味红茶";
+      document.getElementById("n_bottom_line").innerHTML="全新升级配方，以优质红茶粉搭配桃花风味糖浆</br>融入新鲜烹制d牛奶，于口感丝滑的稀奶油上缀以粉色桃花风味糖粒，<br/>一起在这杯如意桃花风味红茶拿铁中遇见桃花吧！";
+    break;
+   case 3:
+      document.getElementById("ni3").style.width='250px';
+      document.getElementById("n_bottom_h3").innerHTML="太妃臻式风味拿铁";
+      document.getElementById("n_bottom_line").innerHTML="这款饮品都是在每年的圣诞节前才有的卖，在拿铁原有的基础上，加入太妃臻果糖浆，<br/>并且覆盖了一层细腻的奶油，洒上太妃臻果粒后，与这个季节相得益彰。<br/>喝起来更是甜甜的，奶香十足，因为又奶油的加入，口感比较丝滑。";
+     break;
+    case 4:
+       document.getElementById("ni4").style.width='250px';
+       document.getElementById("n_bottom_h3").innerHTML="蔓越梅白巧克力摩卡";
+       document.getElementById("n_bottom_line").innerHTML="浓郁香甜的白摩卡酱，融入香醇的浓缩咖啡和顺滑的热牛奶，<br/>覆以搅打奶油，再缀以酸甜果味的蔓越梅酱和晶莹剔透的蔓越梅糖粒<br/>这是奢华版的白摩卡，选用纯正的蔓越梅果酱和糖粒，酸酸甜甜，双重美味。";
+     break;
+   default:
+ }
+
+}
+ </script>
+</head>
+<body onload="getselect()">
+ <div id = "n" >
+  <div id="n_top">
+  </div>
+  <div id="n_main">
+   <div id="d1" class="n_main_show"  onclick="dianji(1)"><img  class ="ni" id="ni1" src="img/n1.png"></div>
+   <div id="d2" class="n_main_show"  onclick="dianji(2)"><img  class ="ni" id="ni2" src="img/n2.png"></div>
+   <div id="d3" class="n_main_show"  onclick="dianji(3)"><img  class ="ni" id="ni3" src="img/n3.png"></div>
+   <div id="d4" class="n_main_show"  onclick="dianji(4)"><img  class ="ni" id="ni4" src="img/n4.png"></div>
+
+  </div>
+  <div id="n_bottom" >
+   <p id="n_bottom_h3"></p>
+   <p id="n_bottom_line"></p>
+
+  </div>
+
+ </div>
+
+</body>
+</html>
